@@ -8,7 +8,7 @@ RUN apk --no-cache add \
     R \
   && rm -rf /var/cache/apk/*
 
-RUN git clone https://github.com/lorenzgerber/OPERA-MS.git
+RUN git clone https://github.com/lorenzgerber/opera.git
 WORKDIR /OPERA-MS
 RUN make
 ENTRYPOINT ["perl", "OPERA-MS.pl"]
