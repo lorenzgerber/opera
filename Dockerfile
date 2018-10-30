@@ -4,7 +4,7 @@ RUN apk --no-cache add \
     wget \
     build-base \
     python \
-    cpanminus \
+    perl-app-cpanminus \
     R \
   && rm -rf /var/cache/apk/*
 
