@@ -1,15 +1,16 @@
-FROM alpine:3.7
+FROM alpine:3.8
 RUN apk --no-cache add \
     git \
     wget \
+    perl-app-cpanminus \
     build-base \
     python \
-    perl-app-cpanminus \
     R \
-  && rm -rf /var/cache/apk/*
+    bash
 
 RUN git clone https://github.com/lorenzgerber/opera.git
-WORKDIR /OPERA-MS
+WORKDIR /opera
+RUN rm -rf .git
 RUN make
 ENTRYPOINT ["perl", "OPERA-MS.pl"]
 
